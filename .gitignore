@@ -1,0 +1,22 @@
+# Dependências
+node_modules/
+**/node_modules/
+
+# Next.js
+.next/
+**/.next/
+
+# Variáveis de ambiente
+.env
+.env.*
+!.env.example
+
+# Arquivos de build/cache
+*.tsbuildinfo
+
+# Arquivos compactados usados como backup
+*.zip
+
+# Sistema/editor
+.DS_Store
+Thumbs.db

@@ -1,8 +1,60 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+:root,
+html[data-tema="escuro"] {
+  --background: #0f172a;
+  --foreground: #f8fafc;
+
+  --app-background: #0f172a;
+  --app-text: #f8fafc;
+  --app-surface: #1e293b;
+  --app-surface-secondary: #0f172a;
+  --app-surface-hover: #273449;
+  --app-border: #334155;
+
+  --app-text-secondary: #94a3b8;
+  --app-text-muted: #64748b;
+
+  --app-primary: #2563eb;
+  --app-primary-hover: #1d4ed8;
+  --app-primary-text: #ffffff;
+
+  --app-success: #22c55e;
+  --app-success-text: #86efac;
+  --app-danger: #ef4444;
+  --app-danger-text: #fca5a5;
+  --app-warning: #f59e0b;
+  --app-warning-text: #fbbf24;
+
+  color-scheme: dark;
+}
+
+html[data-tema="claro"] {
+  --background: #f8fafc;
+  --foreground: #111827;
+
+  --app-background: #f8fafc;
+  --app-text: #111827;
+  --app-surface: #ffffff;
+  --app-surface-secondary: #f1f5f9;
+  --app-surface-hover: #e2e8f0;
+  --app-border: #cbd5e1;
+
+  --app-text-secondary: #475569;
+  --app-text-muted: #64748b;
+
+  --app-primary: #2563eb;
+  --app-primary-hover: #1d4ed8;
+  --app-primary-text: #ffffff;
+
+  --app-success: #15803d;
+  --app-success-text: #166534;
+  --app-danger: #dc2626;
+  --app-danger-text: #991b1b;
+  --app-warning: #d97706;
+  --app-warning-text: #92400e;
+
+  color-scheme: light;
 }
 
 @theme inline {
@@ -12,15 +64,37 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--app-background);
+  color: var(--app-text);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: var(--app-primary);
+  color: var(--app-primary-text);
 }
